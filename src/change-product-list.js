@@ -2,7 +2,6 @@ import { changeCountInBasketIcon } from './count-product-in-notify';
 import { WORDS, getPrice, sklonenie, numberWithSpaces } from './utils';
 
 const productsSectionNode = document.getElementsByClassName('products')[0];
-// console.log(productsSectionNode);
 const productsCollection = productsSectionNode.getElementsByClassName('product');
 const productListNode = productsSectionNode.querySelector('.products__list');
 const selectAllCheckbox = productsSectionNode.querySelector('.checkbox-select-all');
@@ -65,8 +64,6 @@ const changeProductPrice = (productId) => {
     const discountedPriceNode = product.querySelector('.price__total'); // цена с вычетом скидки
     const unitDiscountedPrice = discountedPriceNode.getAttribute('data-price'); // цена за единицу со скидкой
 
-
-    // console.log(unitStartingPrice,unitDiscountedPrice,productCount);
     // startingPriceNode.textContent = Math.round(Number(productCount) * Number(unitStartingPrice));
     // discountedPriceNode.textContent = Math.round(Number(productCount) * Number(unitDiscountedPrice));
 
@@ -111,8 +108,7 @@ const deleteProduct = (elementNode) => {
 
 }
 
-const addProductToFavorites = (elementNode) => { 
-    console.log(elementNode);
+const addProductToFavorites = (elementNode) => {
     if (elementNode.style.stroke === 'rgb(203, 17, 171)') {
         elementNode.style.stroke === 'none';
     } else { 
@@ -202,7 +198,6 @@ const onChangeOrderButtonText = () => {
             paymentDescriptionNode.style.display = 'block';
         } else { 
             let finalPrice = document.getElementsByClassName('total__price')[0].textContent;
-            console.log(finalPrice);
             orderButtonNode.textContent = `Оплатить ${finalPrice}`;
             paymentDescriptionNode.style.display = 'none';
 
@@ -216,8 +211,6 @@ const initChangesProductList = () => {
 
     productListNode.addEventListener('click', (e) => {
         const element = e.target;
-        const className = element.getAttribute('class')
-        // console.log(className);
 
         if (element.classList.contains('action__delete-product')) {
             deleteProduct(e.target);
@@ -240,35 +233,10 @@ const initChangesProductList = () => {
         if (element.classList.contains('count__decrement')) { 
             decrementCountProducts(element);
         }
-
-        // switch (className) {
-        //     case 'action__delete-product':
-        //         deleteProduct(e.target);
-        //         changeTotalPrice();
-        //         break;
-        //     case 'checkbox__span' || 'checkbox__input':
-        //         console.log(className);
-        //         // element.checked = !element.checked;
-        //         onClickCheckbox();
-        //         changeTotalPrice();
-        //         break;
-        //     case 'action__add-favorite':
-        //         addProductToFavorites(element);
-        //         break;
-        //     case 'count__increment':
-        //         incrementCountProducts(element);
-        //         break;
-        //     case 'count__decrement':
-        //         decrementCountProducts(element);
-        //         break;
-        //     default:
-        //         console.log(className);
-        // }
     });
 
     stockListNode.addEventListener('click', (e) => { 
         const element = e.target;
-        console.log(element)
 
         if (element.classList.contains('action__delete-product')) { 
             deleteMissingProduct(e.target);

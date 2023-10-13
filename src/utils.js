@@ -4,7 +4,6 @@ export const regForEmail = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{0,30}[0-9A-Za-z]?)|([0
 
 // Для получения цены из строки  - переименовать на getNumber
 export const getPrice = (str) => { 
-    // return Number(str.replace(/\D/g, ''));
     return Number(str.replace(/[^\d.]/ig, ''));
 }
 

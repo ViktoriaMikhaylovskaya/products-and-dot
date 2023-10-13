@@ -36,12 +36,10 @@ const validateTelField = (label, input) => {
     const labelField = label.querySelector('.form__field-name');
     let inputValue = input.value.replace(/[a-zA-Z\.&^%$_=?><!@#*]/, '');
 
-    // вынести (?)
     let pattern = /(\+7|8)[\s(]?(\d{3})[\s)]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})/g;    // паттерн с проставленными скобками
     let correctNumber = inputValue.replace(pattern, '+7 ($2) $3-$4-$5');    //  заменa
 
     if (!pattern.test(inputValue) && inputValue.length === 0) {
-        console.log(inputValue);
         error.style.opacity = 0;
         input.style.borderColor = 'rgba(0, 0, 0, 0.2)';
     } else { 

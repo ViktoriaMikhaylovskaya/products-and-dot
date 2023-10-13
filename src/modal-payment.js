@@ -39,7 +39,6 @@ function onSaveClickButton() {
     currentCardNumber.textContent = cardNumber;
     currentCardIcon.src = `./images/icons/cards-icons/${cardId}.svg`;
 
-    console.log(currentCardIconNode, `./images/icons/cards-icons/${cardId}.svg`);
     // информация в блоке с итоговыми данными
     cardNumberNode.textContent = cardNumber;
     currentCardIconNode.src = `./images/icons/cards-icons/${cardId}.svg`;

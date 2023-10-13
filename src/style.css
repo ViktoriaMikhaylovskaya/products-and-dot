@@ -108,7 +108,7 @@ input {
 }
 
 [type="checkbox"]:checked + .checkbox__span::after {
-  content: url(./images/icons/check-mark.svg);
+  content: url("../public/images/icons/check-mark.svg");
   border-radius: 5.5px;
   background-color: #cb11ab;
   width: 22px;

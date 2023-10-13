@@ -74,7 +74,6 @@ function onSaveClickButton() {
     currentAddress.textContent = newAddress;
     currentMethod.textContent = deliveryMethod === 'Курьером' ? 'Курьером' : 'Пункт выдачи';
 
-    console.log(newAddress);
     totalDeliveryAddressNode.textContent = newAddress;
     totalPointDeliveryNode.textContent = deliveryMethod === 'Курьером' ? 'Доставка курьером' : 'Доставка в пункт выдачи';
 }
@@ -138,4 +137,3 @@ const initModalDevelop = () => {
 }
 
 export default initModalDevelop;
-
