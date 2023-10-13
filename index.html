@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg"
+      sizes="32x32"
+      href="https://www.wildberries.ru/favicon.ico"
+    />
+    <link rel="preload" href="./fonts/SegoeUI.woff2" as="font" />
+    <title>Товары и точка</title>
+  </head>
+  <body>
+    <svg width="0" height="0" class="hidden">
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="arrow"
+      >
+        <g>
+          <path
+            id="vector"
+            d="M17.3417 14.9121C16.966 15.2982 16.3477 15.3044 15.9644 14.9258L10.1418 9.17475C10.0634 9.0973 9.93715 9.09788 9.85945 9.17603L4.15281 14.9159C3.76725 15.3037 3.14293 15.3137 2.74516 14.9384C2.33549 14.552 2.32163 13.9049 2.71437 13.5012L9.28326 6.74949C9.67588 6.34593 10.3241 6.34593 10.7167 6.74949L17.3417 13.5588C17.7082 13.9355 17.7082 14.5354 17.3417 14.9121Z"
+            fill="#9797AF"
+          ></path>
+        </g>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" id="basket">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
+        ></path>
+      </symbol>
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        id="close"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M4.92961 17.6568C4.53909 18.0473 4.53909 18.6805 4.92961 19.071C5.32014 19.4615 5.9533 19.4615 6.34383 19.071L12.0008 13.414L17.658 19.0711C18.0485 19.4616 18.6817 19.4616 19.0722 19.0711C19.4627 18.6806 19.4627 18.0474 19.0722 17.6569L13.4151 11.9998L19.0717 6.34309C19.4623 5.95257 19.4623 5.3194 19.0717 4.92888C18.6812 4.53835 18.0481 4.53836 17.6575 4.92888L12.0008 10.5856L6.34427 4.92899C5.95374 4.53846 5.32058 4.53846 4.93005 4.92899C4.53953 5.31951 4.53953 5.95267 4.93005 6.3432L10.5866 11.9998L4.92961 17.6568Z"
+          fill="#9797AF"
+        ></path>
+      </symbol>
+      <symbol
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        id="edit"
+      >
+        <g id="icon20">
+          <g>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.1585 3.05991L16.9401 6.84154L6.72705 17.0546L2.73544 17.8529C2.38557 17.9229 2.07711 17.6144 2.14709 17.2646L2.94541 13.273L13.1585 3.05991ZM4.17707 13.9321L13.1585 4.95072L15.0493 6.84154L6.06789 15.8229L3.70436 16.2956L4.17707 13.9321Z"
+              fill="#CB11AB"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M15.9948 7.78715L12.2132 4.00552L13.6313 2.5874C14.4145 1.8042 15.6843 1.8042 16.4675 2.5874L17.4129 3.53281C18.1961 4.31601 18.1961 5.58584 17.4129 6.36904L15.9948 7.78715ZM16.4675 5.42363C16.7286 5.16256 16.7286 4.73929 16.4675 4.47822L15.5221 3.53281C15.261 3.27174 14.8378 3.27174 14.5767 3.53281L14.104 4.00552L15.9948 5.89634L16.4675 5.42363Z"
+              fill="#CB11AB"
+            ></path>
+          </g>
+        </g>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="heart">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M3.03396 4.05857C2.26589 4.75224 1.76684 5.83284 1.99493 7.42928C2.22332 9.02783 3.26494 10.6852 4.80436 12.3478C6.25865 13.9184 8.10962 15.4437 9.99996 16.874C11.8903 15.4437 13.7413 13.9184 15.1956 12.3478C16.735 10.6852 17.7766 9.02783 18.005 7.4293C18.233 5.83285 17.734 4.75224 16.9659 4.05856C16.1766 3.34572 15.055 3 14 3C12.1319 3 11.0923 4.08479 10.5177 4.68443C10.4581 4.7466 10.4035 4.80356 10.3535 4.85355C10.1582 5.04882 9.84166 5.04882 9.6464 4.85355C9.59641 4.80356 9.54182 4.7466 9.48224 4.68443C8.90757 4.08479 7.86797 3 5.99995 3C4.94495 3 3.82325 3.34573 3.03396 4.05857ZM2.36371 3.31643C3.37369 2.40427 4.75202 2 5.99995 2C8.07123 2 9.34539 3.11257 9.99996 3.77862C10.6545 3.11257 11.9287 2 14 2C15.2479 2 16.6262 2.40428 17.6362 3.31644C18.6674 4.24776 19.2668 5.66715 18.9949 7.5707C18.7233 9.47217 17.5149 11.3148 15.9294 13.0272C14.3355 14.7486 12.3064 16.3952 10.3 17.9C10.1222 18.0333 9.87773 18.0333 9.69995 17.9C7.69353 16.3952 5.66443 14.7485 4.0706 13.0272C2.48503 11.3148 1.27665 9.47217 1.00498 7.57072C0.733012 5.66716 1.33249 4.24776 2.36371 3.31643Z"
+        ></path>
+      </symbol>
+    </svg>
+
+    <header>
+      <div class="header">
+        <button class="header__menu-button" type="button"></button>
+        <a class="header__title" href="#">Товары и точка</a>
+        <input
+          class="header__search-input"
+          placeholder="Я ищу..."
+          type="text"
+        />
+        <img
+          class="header__search-icon"
+          src="./images/icons/search.svg"
+          alt="Иконка поиска"
+        />
+        <nav class="header__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#">
+                <img src="./images/icons/user.svg" alt="Переход в профиль" />
+              </a>
+              Профиль
+            </li>
+            <li class="nav__item nav__item--basket" data-count="3">
+              <a href="#">
+                <img
+                  src="./images/icons/main-basket.svg"
+                  alt="Переход в корзину"
+                />
+              </a>
+              Корзина
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <form class="main-content">
+        <h1 class="main-title">Корзина</h1>
+        <section class="products">
+          <div class="products__header">
+            <label class="products__checkbox checkbox">
+              <input
+                class="checkbox__input checkbox-select-all"
+                type="checkbox"
+              />
+              <span class="checkbox__span"></span>
+            </label>
+            <span class="products__select-all">Выбрать все</span>
+            <span class="products__hide-info"></span>
+            <img
+              class="products__icon"
+              src="./images/icons/arrow.svg"
+              alt="Свернуть список"
+            />
+          </div>
+          <ul class="products__list">
+            <li class="products__item product" data-product="1">
+              <label class="product__checkbox checkbox">
+                <input class="checkbox__input" checked type="checkbox" />
+                <span class="checkbox__span"></span>
+                <img
+                  src="./images/products-photos/t-shirt.jpg"
+                  alt="Фото товара"
+                  width="80"
+                  height="106"
+                />
+              </label>
+              <div class="product__info">
+                <a class="product__title" href="#">Футболка UZcotton мужская</a>
+                <div class="product__characteristics">
+                  <span class="product__color">Цвет: белый</span>
+                  <span class="product__size">Размер: 56</span>
+                </div>
+                <span class="product__stok-info gray-text">Коледино WB</span>
+                <div class="product__company">
+                  <span class="gray-text">OOO Вайлдберриз</span>
+                  <img
+                    class="info-icon"
+                    src="./images/icons/info.svg"
+                    alt="Дополнительная информация"
+                  />
+                  <div class="company-info">
+                    <h5 class="company-info__title">OOO Вайлдберриз</h5>
+                    <span>ОГРН: 5167746237148</span>
+                    <span>
+                      129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1,
+                      помещение 2, офис 34
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="product__price price">
+                <span class="price__total" data-price="522">
+                  522
+                  <span class="price__total-currency">сом</span>
+                </span>
+                <span class="price__initial-sum gray-text" data-price="1051">
+                  1051 сом
+                </span>
+                <div class="discount-info">
+                  <div>
+                    <span>Скидка 55%</span>
+                    <span>-300 сом</span>
+                  </div>
+                  <div>
+                    <span>Скидка покупателя 10%</span>
+                    <span>30 сом</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product__count count">
+                <div class="count__buttons">
+                  <button
+                    class="count__decrement"
+                    type="button"
+                    data-decrement="1"
+                  >
+                    −
+                  </button>
+                  <span class="count__sum">1</span>
+                  <button
+                    class="count__increment"
+                    type="button"
+                    data-increment="1"
+                  >
+                    +
+                  </button>
+                </div>
+                <span class="count__remainder red-text">Осталось 2 шт.</span>
+                <div class="count__actions action">
+                  <span class="action__wrapper">
+                    <svg class="action__add-favorite">
+                      <use xlink:href="#heart"></use>
+                    </svg>
+                  </span>
+                  <span class="action__wrapper">
+                    <svg class="action__delete-product" data-product="1">
+                      <use xlink:href="#basket"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="discount">
+                  <ul>
+                    <li>
+                      <span>Скидка 55%</span>
+                      <span>-300 сом</span>
+                    </li>
+                    <li>
+                      <span>Скидка покупателя 10%</span>
+                      <span>30 сом</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="products__item product" data-product="2">
+              <label class="product__checkbox checkbox">
+                <input
+                  class="checkbox__input"
+                  checked
+                  type="checkbox"
+                  data-product="2"
+                />
+                <span class="checkbox__span"></span>
+                <img
+                  src="./images/products-photos/case.jpg"
+                  alt="Фото товара"
+                  width="80"
+                  height="106"
+                />
+              </label>
+              <div class="product__info">
+                <a class="product__title" href="#">
+                  Силиконовый чехол картхолдер (отверстия) для карт, прозрачный
+                  кейс бампер на Apple iPhone XR, MobiSafe
+                </a>
+                <div class="product__characteristics">
+                  <span class="product__color">Цвет: прозрачный</span>
+                </div>
+                <span class="product__stok-info gray-text">Коледино WB</span>
+                <div class="product__company">
+                  <span class="gray-text">OOO Мегапрофстиль</span>
+                  <img
+                    class="info-icon"
+                    src="./images/icons/info.svg"
+                    alt="Дополнительная информация"
+                  />
+                  <div class="company-info">
+                    <h5 class="company-info__title">OOO «МЕГАПРОФСТИЛЬ»</h5>
+                    <span>ОГРН: 5167746237148</span>
+                    <span>
+                      129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1,
+                      помещение 2, офис 34
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="product__price price">
+                <span class="price__total" data-price="10500.24">
+                  2 100 047
+                  <span class="price__total-currency">сом</span>
+                </span>
+                <span
+                  class="price__initial-sum gray-text"
+                  data-price="11500.24"
+                >
+                  2 300 047 сом
+                </span>
+                <div class="discount-info">
+                  <div>
+                    <span>Скидка 55%</span>
+                    <span>-300 сом</span>
+                  </div>
+                  <div>
+                    <span>Скидка покупателя 10%</span>
+                    <span>30 сом</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product__count count">
+                <div class="count__buttons">
+                  <button
+                    class="count__decrement"
+                    type="button"
+                    data-decrement="2"
+                  >
+                    -
+                  </button>
+                  <span class="count__sum">200</span>
+                  <button
+                    class="count__increment"
+                    type="button"
+                    data-increment="2"
+                  >
+                    +
+                  </button>
+                </div>
+                <div class="count__actions action">
+                  <span class="action__wrapper">
+                    <svg class="action__add-favorite">
+                      <use xlink:href="#heart"></use>
+                    </svg>
+                  </span>
+                  <span class="action__wrapper">
+                    <svg class="action__delete-product" data-product="2">
+                      <use xlink:href="#basket"></use>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="products__item product" data-product="3">
+              <label class="product__checkbox checkbox">
+                <input class="checkbox__input" type="checkbox" />
+                <span class="checkbox__span"></span>
+                <img
+                  src="./images/products-photos/pencils.jpg"
+                  alt="Фото товара"
+                  width="80"
+                  height="106"
+                />
+              </label>
+              <div class="product__info">
+                <a class="product__title" href="#">
+                  Карандаши цветные Faber-Castell "Замок", набор 24 цвета,
+                  заточенные, шестигранные, Faber-Castell
+                </a>
+                <span class="product__stok-info gray-text">Коледино WB</span>
+                <div class="product__company">
+                  <span class="gray-text">OOO Вайлдберриз</span>
+                  <img
+                    class="info-icon"
+                    src="./images/icons/info.svg"
+                    alt="Дополнительная информация"
+                  />
+                  <div class="company-info">
+                    <h5 class="company-info__title">OOO Вайлдберриз</h5>
+                    <span>ОГРН: 5167746237148</span>
+                    <span>
+                      129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1,
+                      помещение 2, офис 34
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="product__price price">
+                <span class="price__total" data-price="247">
+                  494
+                  <span class="price__total-currency">сом</span>
+                </span>
+                <span class="price__initial-sum gray-text" data-price="475">
+                  950 сом
+                </span>
+                <div class="discount-info">
+                  <div>
+                    <span>Скидка 55%</span>
+                    <span>-300 сом</span>
+                  </div>
+                  <div>
+                    <span>Скидка покупателя 10%</span>
+                    <span>30 сом</span>
+                  </div>
+                </div>
+              </div>
+              <div class="product__count count">
+                <div class="count__buttons">
+                  <button
+                    class="count__decrement"
+                    type="button"
+                    data-decrement="3"
+                  >
+                    -
+                  </button>
+                  <span class="count__sum">2</span>
+                  <button
+                    class="count__increment"
+                    type="button"
+                    data-increment="3"
+                    disabled
+                  >
+                    +
+                  </button>
+                </div>
+                <span class="count__remainder red-text">Осталось 2 шт.</span>
+                <div class="count__actions action">
+                  <span class="action__wrapper">
+                    <svg class="action__add-favorite">
+                      <use xlink:href="#heart"></use>
+                    </svg>
+                  </span>
+                  <span class="action__wrapper">
+                    <svg class="action__delete-product" data-product="3">
+                      <use xlink:href="#basket"></use>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="out-of-stock stock">
+          <div class="stock__header">
+            <h3 class="stock__title">Отсутствуют · 3 товара</h3>
+            <img
+              class="stock__icon"
+              src="./images/icons/arrow.svg"
+              alt="Свернуть список"
+            />
+          </div>
+          <ul class="stock__list">
+            <li class="stock__item" data-missing-product="1">
+              <img
+                class="stock__item-img"
+                src="./images/products-photos/t-shirt.jpg"
+                alt="Фото товара"
+                width="80"
+                height="106"
+              />
+              <div class="stock__item-info">
+                <span class="stock__item-title gray-text">
+                  Футболка UZcotton мужская
+                </span>
+                <div class="stock__characteristics">
+                  <span class="stock__item-color gray-text">Цвет: белый</span>
+                  <span class="stock__item-size gray-text">Размер: 56</span>
+                </div>
+              </div>
+              <div class="stock__actions action">
+                <span class="action__wrapper">
+                  <svg class="action__add-favorite">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </span>
+                <span class="action__wrapper">
+                  <svg class="action__delete-product" data-missing-product="1">
+                    <use xlink:href="#basket"></use>
+                  </svg>
+                </span>
+              </div>
+            </li>
+            <li class="stock__item" data-missing-product="2">
+              <img
+                class="stock__item-img"
+                src="./images/products-photos/case.jpg"
+                alt="Фото товара"
+                width="80"
+                height="106"
+              />
+              <div class="stock__item-info">
+                <span class="stock__item-title gray-text">
+                  Силиконовый чехол картхолдер (отверстия) для карт, прозрачный
+                  кейс бампер на Apple iPhone XR, MobiSafe
+                </span>
+                <span class="stock__item-color gray-text">
+                  Цвет: прозрачный
+                </span>
+              </div>
+              <div class="stock__actions action">
+                <span class="action__wrapper">
+                  <svg class="action__add-favorite">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </span>
+                <span class="action__wrapper">
+                  <svg class="action__delete-product" data-missing-product="2">
+                    <use xlink:href="#basket"></use>
+                  </svg>
+                </span>
+              </div>
+            </li>
+            <li class="stock__item" data-missing-product="3">
+              <img
+                class="stock__item-img"
+                src="./images/products-photos/pencils.jpg"
+                alt="Фото товара"
+                width="80"
+                height="106"
+              />
+              <div class="stock__item-info">
+                <span class="stock__item-title gray-text">
+                  Карандаши цветные Faber-Castell "Замок", набор 24 цвета,
+                  заточенные, шестигранные, Faber-Castell
+                </span>
+              </div>
+              <div class="stock__actions action">
+                <span class="action__wrapper">
+                  <svg class="action__add-favorite">
+                    <use xlink:href="#heart"></use>
+                  </svg>
+                </span>
+                <span class="action__wrapper">
+                  <svg class="action__delete-product" data-missing-product="3">
+                    <use xlink:href="#basket"></use>
+                  </svg>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="delivery">
+          <div class="delivery__header">
+            <h2 class="delivery__title">Способ доставки</h2>
+            <button class="delivery__edit edit-button" type="button">
+              Изменить
+            </button>
+          </div>
+          <div class="delivery__point point">
+            <span class="point__title">Пункт выдачи</span>
+            <div class="point__info">
+              <span class="point__address">
+                Бишкек, улица Ахматбека Суюмбаева, 12/1
+              </span>
+              <div class="point__schedule">
+                <img src="./images/icons/star-yellow.svg" alt="Иконка звезды" />
+                <span>4.99</span>
+                <span>Ежедневно с 10 до 21 </span>
+              </div>
+            </div>
+          </div>
+          <div class="delivery__cost cost">
+            <span class="cost__title">Стоимость доставки</span>
+            <span class="cost__info">Бесплатно</span>
+          </div>
+          <div class="delivery__date-container">
+            <span class="delivery__date">5—6 февраля</span>
+            <ul class="delivery__products-photos">
+              <li class="photo">
+                <img
+                  src="./images/products-photos/t-shirt.jpg"
+                  alt="Фото товара"
+                  width="40"
+                  height="56"
+                />
+              </li>
+              <li class="photo" data-numb="184" data-link="184">
+                <img
+                  src="./images/products-photos/case.jpg"
+                  alt="Фото товара"
+                  width="40"
+                  height="56"
+                />
+              </li>
+              <li class="photo" data-numb="2" data-link="2">
+                <img
+                  src="./images/products-photos/pencils.jpg"
+                  alt="Фото товара"
+                  width="40"
+                  height="56"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="delivery__date-container">
+            <span class="delivery__date">7—8 февраля</span>
+            <ul class="delivery__products-photos">
+              <li class="photo" data-numb="16" data-link="16">
+                <img
+                  src="./images/products-photos/case.jpg"
+                  alt="Фото товара"
+                  width="40"
+                  height="56"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="delivery__message message">
+            <img
+              src="./images/icons/price-shipping.svg"
+              alt="Просто иконка галочки"
+            />
+            <div class="message__text">
+              <span> Обратная доставка товаров на склад при отказе — </span>
+              <span class="message__free">бесплатно</span>
+              <div class="message__extra-text">
+                Если товары вам не подойдут, мы вернем их обратно на склад — это
+                бесплатно
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="payment">
+          <div class="payment__header">
+            <h2 class="payment__title">Способ оплаты</h2>
+            <button class="payment__edit edit-button" type="button">
+              Изменить
+            </button>
+          </div>
+          <div class="payment__info">
+            <span class="payment__card">
+              <img
+                src="./images/icons/cards-icons/mir.svg"
+                alt="Иконка карты"
+              />
+            </span>
+            <span class="payment__card-number">1234 56•• •••• 1234</span>
+            <span class="payment__card-date">01/30</span>
+          </div>
+          <span class="payment__extra-text gray-text">
+            Спишем оплату с карты при получении
+          </span>
+        </section>
+
+        <section class="recipient">
+          <h2 class="recipient__title">Получатель</h2>
+          <div class="recipient__form form">
+            <label class="form__label form__label--name">
+              <span class="form__field-error">Укажите имя</span>
+              <input
+                class="form__field"
+                type="text"
+                placeholder="Имя"
+                required
+              />
+              <span class="form__field-name gray-text">Имя</span>
+            </label>
+            <label class="form__label form__label--surname">
+              <span class="form__field-error">Введите фамилию</span>
+              <input
+                class="form__field"
+                type="text"
+                placeholder="Фамилия"
+                required
+              />
+              <span class="form__field-name gray-text">Фамилия</span>
+            </label>
+            <label class="form__label form__label--email">
+              <span class="form__field-error">Укажите электронную почту</span>
+              <input
+                class="form__field"
+                type="email"
+                placeholder="Электронная почта"
+                required
+              />
+              <span class="form__field-name gray-text">Электронная почта</span>
+            </label>
+            <label class="form__label form__label--tel">
+              <span class="form__field-error">Формат: +7 777 777 77 77</span>
+              <input
+                class="form__field"
+                type="tel"
+                placeholder="+7 988 123-45-67"
+                minlength="11"
+                maxlength="30"
+                required
+              />
+              <span class="form__field-name gray-text">Телефон</span>
+            </label>
+            <label class="form__label">
+              <span class="form__field-extra-text">
+                Для таможенного оформления
+              </span>
+              <input
+                class="form__field"
+                type="text"
+                placeholder="ИНН"
+                maxlength="14"
+                minlength="14"
+                required
+              />
+              <span class="form__field-name gray-text">ИНН</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="total">
+          <div class="total__header">
+            <h2 class="total__title">Итого</h2>
+            <span class="total__price">2 101 063 сом</span>
+          </div>
+          <ul class="total__list">
+            <li class="total__item">
+              <span class="total__product-count">203 товара</span>
+              <span class="total__init-ptice">2 302 048 сом</span>
+            </li>
+            <li class="total__item">
+              <span>Скидка</span>
+              <span class="total__item-discount">-200 985 сом</span>
+            </li>
+            <li class="total__item">
+              <span>Доставка</span>
+              <span>Бесплатно</span>
+            </li>
+          </ul>
+          <div class="total__delivery-info delivery-info">
+            <div class="delivery-info__header">
+              <h4 class="delivery-info__title">Доставка в пункт выдачи</h4>
+              <img
+                class="delivery-info__edit"
+                src="./images/icons/edit.svg"
+                alt="Редактировать"
+              />
+            </div>
+            <span class="delivery-info__address">
+              Бишкек, улица Ахматбека Суюмбаева, 12/1
+            </span>
+            <span class="delivery-info__date">5-8 фев</span>
+          </div>
+          <div class="total__delivery-message message">
+            <img
+              src="./images/icons/price-shipping.svg"
+              alt="Просто иконка галочки"
+            />
+            <div class="message__text">
+              <span> Обратная доставка товаров на склад при отказе — </span>
+              <span class="message__free">бесплатно</span>
+              <div class="message__extra-text">
+                Если товары вам не подойдут, мы вернем их обратно на склад — это
+                бесплатно
+              </div>
+            </div>
+          </div>
+          <div class="total__payment">
+            <div class="total__payment-by-card payment-by-card">
+              <div class="payment-by-card__header">
+                <h4 class="payment-by-card__title">Оплата картой</h4>
+                <span class="payment-by-card__edit">
+                  <img src="./images/icons/edit.svg" alt="Редактировать" />
+                </span>
+              </div>
+              <div class="payment-by-card__card-info">
+                <span class="payment-by-card__card-icon">
+                  <img
+                    src="./images/icons/cards-icons/mir.svg"
+                    alt="Иконка карты"
+                  />
+                </span>
+                <span class="payment-by-card__card-number">
+                  1234 12•• •••• 1234
+                </span>
+              </div>
+            </div>
+            <div class="payment-write-off">
+              <label class="payment-write-off__checkbox checkbox">
+                <input class="checkbox__input" type="checkbox" />
+                <span class="checkbox__span"></span>
+                Списать оплату сразу
+              </label>
+              <span class="payment-write-off__description">
+                Спишем оплату с карты при получении
+              </span>
+            </div>
+          </div>
+          <div>
+            <button class="order-button" type="submit">Заказать</button>
+            <div class="total__oferta oferta">
+              <img src="./images/icons/check-mark-black.svg" alt="Галочка" />
+              <span class="oferta__text">
+                Соглашаюсь
+                <a href="#" target="_blank">
+                  с правилами пользования торговой площадкой
+                </a>
+                и
+                <a href="#" target="_blank">возврата</a>
+              </span>
+            </div>
+          </div>
+        </section>
+      </form>
+    </main>
+
+    <footer>
+      <p class="cooperate">© 2022 ООО «Товары и точка»</p>
+      <nav class="tabbar">
+        <ul class="tabs">
+          <li class="tabs__item">
+            <img src="./images/icons/navs-icons/home.svg" alt="Главный экран" />
+          </li>
+          <li class="tabs__item">
+            <img
+              src="./images/icons/navs-icons/search.svg"
+              alt="Поиск в каталоге"
+            />
+          </li>
+          <li data-numb="3" class="tabs__item tabbar__tab tabbar__tab--active">
+            <img src="./images/icons/navs-icons/basket.svg" alt="Корзина" />
+          </li>
+          <li class="tabs__item">
+            <img src="./images/icons/navs-icons/heart.svg" alt="Избранное" />
+          </li>
+          <li class="tabs__item">
+            <img src="./images/icons/navs-icons/user.svg" alt="Профиль" />
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+    <section class="modal-payment modal">
+      <div class="modal__container">
+        <div class="modal__header">
+          <h3 class="modal__title">Способ оплаты</h3>
+          <img
+            class="modal__close-icon"
+            src="./images/icons/close.svg"
+            alt="Закрыть модальное окно"
+          />
+        </div>
+        <fieldset class="modal__form">
+          <div class="card">
+            <input
+              class="card__radio-btn"
+              type="radio"
+              id="mir"
+              name="card"
+              checked
+            />
+            <label class="card__number" for="mir">
+              <span class="card__icon">
+                <img
+                  src="./images/icons/cards-icons/mir.svg"
+                  alt="Иконка карты"
+                />
+              </span>
+              1234 56•• •••• 1234
+            </label>
+          </div>
+
+          <div class="card">
+            <input class="card__radio-btn" type="radio" id="visa" name="card" />
+            <label class="card__number" for="visa">
+              <span class="card__icon">
+                <img
+                  src="./images/icons/cards-icons/visa.svg"
+                  alt="Иконка карты"
+                />
+              </span>
+              1234 56•• •••• 1235
+            </label>
+          </div>
+          <div class="card">
+            <input
+              class="card__radio-btn"
+              type="radio"
+              id="mastercard"
+              name="card"
+            />
+            <label class="card__number" for="mastercard">
+              <span class="card__icon">
+                <img
+                  src="./images/icons/cards-icons/mastercard.svg"
+                  alt="Иконка карты"
+                />
+              </span>
+              1234 56•• •••• 1236
+            </label>
+          </div>
+          <div class="card">
+            <input
+              class="card__radio-btn"
+              type="radio"
+              id="maestro"
+              name="card"
+            />
+            <label class="card__number" for="maestro">
+              <span class="card__icon">
+                <img
+                  src="./images/icons/cards-icons/maestro.svg"
+                  alt="Иконка карты"
+                />
+              </span>
+              1234 56•• •••• 1237
+            </label>
+          </div>
+        </fieldset>
+        <button class="button-select" type="submit">Выбрать</button>
+      </div>
+    </section>
+
+    <section class="modal-develop modal">
+      <div class="modal__container">
+        <div class="modal__header">
+          <h3 class="modal__title">Способ доставки</h3>
+          <img
+            class="modal__close-icon"
+            src="./images/icons/close.svg"
+            alt="Закрыть модальное окно"
+          />
+        </div>
+        <fieldset class="modal__form">
+          <div class="delivery-ability method">
+            <label class="method__item">
+              <input
+                class="method__input"
+                checked
+                type="radio"
+                name="ability"
+                value="point"
+              />
+              <span class="method__text" data-method="Пункт выдачи"
+                >В пункт выдачи</span
+              >
+            </label>
+            <label class="method__item">
+              <input
+                class="method__input"
+                type="radio"
+                name="ability"
+                value="courier"
+              />
+              <span class="method__text" data-method="Курьером">Курьером</span>
+            </label>
+          </div>
+
+          <span class="modal__address-title">Мои адреса</span>
+
+          <div class="addresses-block addresses-point-block">
+            <div class="address" data-address="1">
+              <input
+                class="address__input"
+                checked
+                type="radio"
+                id="point1"
+                name="address"
+              />
+              <div class="address__info">
+                <label class="address__label" for="point1">
+                  г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                </label>
+                <span class="address__extra-info extra-info">
+                  <img
+                    src="./images/icons/star-yellow.svg"
+                    alt="Иконка звезды"
+                  />
+                  <span class="extra-info__place">Пункт выдачи</span>
+                </span>
+              </div>
+              <span class="address__delete-icon">
+                <svg class="address__delete-svg" data-address="1">
+                  <use xlink:href="#basket"></use>
+                </svg>
+              </span>
+            </div>
+
+            <div class="address" data-address="2">
+              <input
+                class="address__input"
+                type="radio"
+                id="point2"
+                name="address"
+              />
+              <div class="address__info">
+                <label class="address__label" for="point2">
+                  Бишкек, улица Ахматбека Суюмбаева, 12/1
+                </label>
+                <span class="address__extra-info extra-info">
+                  <img
+                    src="./images/icons/star-yellow.svg"
+                    alt="Иконка звезды"
+                  />
+                  <span class="extra-info__grade">4.99</span>
+                  <span class="extra-info__place">Пункт выдачи</span>
+                </span>
+              </div>
+              <span class="address__delete-icon">
+                <svg class="address__delete-svg" data-address="2">
+                  <use xlink:href="#basket"></use>
+                </svg>
+              </span>
+            </div>
+
+            <div class="address" data-address="3">
+              <input
+                class="address__input"
+                type="radio"
+                id="point3"
+                name="address"
+              />
+              <div class="address__info">
+                <label class="address__label" for="point3">
+                  г. Бишкек, улица Табышалиева, д. 57
+                </label>
+                <span class="address__extra-info extra-info">
+                  <img
+                    src="./images/icons/star-yellow.svg"
+                    alt="Иконка звезды"
+                  />
+                  <span class="extra-info__grade">4.99</span>
+                  <span class="extra-info__place">Пункт выдачи</span>
+                </span>
+              </div>
+              <span class="address__delete-icon">
+                <svg class="address__delete-svg" data-address="3">
+                  <use xlink:href="#basket"></use>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="addresses-block addresses-courier-block addresses-block--hidden"
+          >
+            <div class="address" data-address="4">
+              <input
+                class="address__input"
+                checked
+                type="radio"
+                id="address1"
+                name="address-list-2"
+              />
+              <div class="address__info">
+                <label class="address__label" for="address1">
+                  Бишкек, улица Табышалиева, 57
+                </label>
+              </div>
+              <span class="address__delete-icon">
+                <svg class="address__delete-svg" data-address="4">
+                  <use xlink:href="#basket"></use>
+                </svg>
+              </span>
+            </div>
+
+            <div class="address" data-address="5">
+              <input
+                class="address__input"
+                type="radio"
+                id="address2"
+                name="address-list-2"
+              />
+              <div class="address__info">
+                <label class="address__label" for="address2">
+                  Бишкек, улица Жукеева-Пудовкина, 77/1
+                </label>
+              </div>
+              <span class="address__delete-icon">
+                <svg class="address__delete-svg" data-address="5">
+                  <use xlink:href="#basket"></use>
+                </svg>
+              </span>
+            </div>
+
+            <div class="address" data-address="6">
+              <input
+                class="address__input"
+                type="radio"
+                id="address3"
+                name="address-list-2"
+              />
+              <div class="address__info">
+                <label class="address__label" for="address3">
+                  Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
+                </label>
+              </div>
+              <span class="address__delete-icon">
+                <svg class="address__delete-svg" data-address="6">
+                  <use xlink:href="#basket"></use>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <button class="button-select" type="button">Выбрать</button>
+        </fieldset>
+      </div>
+    </section>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
