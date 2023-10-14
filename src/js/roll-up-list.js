@@ -1,4 +1,5 @@
 import { WORDS, getNoun, getNumber } from './utils';
+
 const arrowIconNode = document.querySelector('.products__icon');
 const productListNode = document.querySelector('.products__list');
 const hideInfoNode = document.querySelector('.products__hide-info');

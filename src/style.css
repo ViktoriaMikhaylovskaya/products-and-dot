@@ -1747,7 +1747,7 @@ footer::before {
 }
 
 /* Модальное окно "Способ доставки" */
-.modal-develop__show-modal {
+.modal-delivery__show-modal {
   display: flex;
 }
 
@@ -1856,11 +1856,11 @@ footer::before {
     display: flex;
   }
 
-  .modal-develop__show-modal {
+  .modal-delivery__show-modal {
     display: flex;
   }
 
-  .modal-develop .modal__container {
+  .modal-delivery .modal__container {
     width: 500px;
   }
 

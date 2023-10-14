@@ -13,9 +13,9 @@ const paymentCheckboxNode = paymentNode.querySelector('.checkbox__input');
 const orderButtonNode = document.querySelector('.order-button');
 
 const changeTotalPrice = () => { 
-    const totalPriceNode = document.querySelector('.total__price'); // итоговая цена с вычетом скидки - Блок Итого
-    const initTotalPriceNode = document.querySelector('.total__init-ptice'); // цена до вычета скидки - Блок Итого
-    const discountNode = document.querySelector('.total__item-discount'); // сумма скидки - Блок Итого
+    const totalPriceNode = document.querySelector('.total__price');
+    const initTotalPriceNode = document.querySelector('.total__init-ptice');
+    const discountNode = document.querySelector('.total__item-discount');
     const countProductsNode = document.querySelector('.total__product-count');
 
     let totalPrice = 0;
@@ -49,16 +49,15 @@ const changeTotalPrice = () => {
     countProductsNode.textContent = `${count} ${getNoun(count, WORDS)}`;
 }
 
-// Функция для пересчитывания цены при изменении количества продуктов
 const changeProductPrice = (productId) => {
     const productsSectionNode = document.querySelector('.products');
     const product = productsSectionNode.querySelector(`.product[data-product="${productId}"]`);
-    const productCount = product.querySelector('.count__sum').textContent; // количество товаров
+    const productCount = product.querySelector('.count__sum').textContent;
 
-    const startingPriceNode = product.querySelector('.price__initial-sum'); // начальная цена
-    const unitStartingPrice = startingPriceNode.getAttribute('data-price'); // начальная цена за единицу
-    const discountedPriceNode = product.querySelector('.price__total'); // цена с вычетом скидки
-    const unitDiscountedPrice = discountedPriceNode.getAttribute('data-price'); // цена за единицу со скидкой
+    const startingPriceNode = product.querySelector('.price__initial-sum');
+    const unitStartingPrice = startingPriceNode.getAttribute('data-price');
+    const discountedPriceNode = product.querySelector('.price__total');
+    const unitDiscountedPrice = discountedPriceNode.getAttribute('data-price');
 
     startingPriceNode.textContent = getNumberWithSpaces((Number(productCount) * Number(unitStartingPrice)).toFixed(2));
     discountedPriceNode.textContent = getNumberWithSpaces((Number(productCount) * Number(unitDiscountedPrice)).toFixed(2));
@@ -80,7 +79,6 @@ const onClickSelectAllCheckbox = () => {
 }
 
 const onClickCheckbox = () => {
-    console.log('22222');
     for (let product of productsCollection) { 
         if (!product.checked) {
             selectAllCheckbox.checked = false;
@@ -104,21 +102,20 @@ const deleteProduct = (elementNode) => {
 
 const addProductToFavorites = (elementNode) => {
     if (elementNode.style.stroke === 'rgb(203, 17, 171)') {
-        elementNode.style.stroke === 'none';
+        elementNode.style.stroke = 'none';
     } else { 
         elementNode.style.stroke = 'rgb(203, 17, 171)';
     }
 }
 
-// Изменение количества продуктов в корзине
 const incrementCountProducts = (elementNode) => {
     const buttonNumber = elementNode.getAttribute('data-increment');
     const productsSectionNode = document.querySelector('.products');
-    const product = productsSectionNode.querySelector(`.product[data-product="${buttonNumber}"]`);
-    const countNode = product.querySelector('.count__sum');
+    const productNode = productsSectionNode.querySelector(`.product[data-product="${buttonNumber}"]`);
+    const countNode = productNode.querySelector('.count__sum');
 
-    if (!!product.querySelector('.count__remainder')) {
-        const remainderNode = product.querySelector('.count__remainder');
+    if (!!productNode.querySelector('.count__remainder')) {
+        const remainderNode = productNode.querySelector('.count__remainder');
         const remainder = getNumber(remainderNode.textContent);
 
         if (Number(countNode.textContent) < remainder) {
@@ -160,9 +157,7 @@ const decrementCountProducts = (elementNode) => {
     onChangeOrderButtonText();
 }
 
-
-// Блок с отстуствующими товарами
-const deleteMissingProduct = (elementNode) => { // Удаление отвутствующего продукта
+const deleteMissingProduct = (elementNode) => {
     const basketNumber = elementNode.getAttribute('data-missing-product');
 
     for (let product of missingProducts) {
@@ -187,16 +182,16 @@ const changeMissingProductsBlock = () => {
 
 const onChangeOrderButtonText = () => {
     const paymentCheckboxNode = paymentNode.querySelector('.checkbox__input');
-        if (!paymentCheckboxNode.checked) {
-            orderButtonNode.textContent = 'Заказать';
-            paymentDescriptionNode.style.display = 'block';
-        } else { 
-            let finalPrice = document.getElementsByClassName('total__price')[0].textContent;
-            orderButtonNode.textContent = `Оплатить ${finalPrice}`;
-            paymentDescriptionNode.style.display = 'none';
+    if (!paymentCheckboxNode.checked) {
+        orderButtonNode.textContent = 'Заказать';
+        paymentDescriptionNode.style.display = 'block';
+    } else { 
+        let finalPrice = document.getElementsByClassName('total__price')[0].textContent;
+        orderButtonNode.textContent = `Оплатить ${finalPrice}`;
+        paymentDescriptionNode.style.display = 'none';
 
-        }
     }
+}
 
 
 const initChangesProductList = () => {
