@@ -895,7 +895,7 @@ footer::before {
 
   .header__menu-button::before {
     position: absolute;
-    content: url(images/icons/menu-mobile.svg);
+    content: url(/images/icons/menu-mobile.svg);
     width: 28px;
     height: 28px;
     left: 0px;
@@ -1000,7 +1000,7 @@ footer::before {
   }
 
   .header__menu-button::before {
-    content: url(images/icons/menu.svg);
+    content: url(/images/icons/menu.svg);
     width: 28px;
     height: 24px;
     position: absolute;
