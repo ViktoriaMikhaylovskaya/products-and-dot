@@ -1,4 +1,4 @@
-import { WORDS, sklonenie, getPrice } from './utils';
+import { WORDS, getNoun, getNumber } from './utils';
 const arrowIconNode = document.querySelector('.products__icon');
 const productListNode = document.querySelector('.products__list');
 const hideInfoNode = document.querySelector('.products__hide-info');
@@ -12,13 +12,13 @@ const outOfStockArrowIconNode = document.querySelector('.stock__icon');
 const stockListNode = document.querySelector('.stock__list');
 
 const hideProductlist = () => { 
-    const count = getPrice(productCountNode.textContent);
+    const count = getNumber(productCountNode.textContent);
     if (arrowIconNode.classList.contains('closed-list-icon')) {
         arrowIconNode.classList.remove('closed-list-icon');
         productListNode.style.display = 'none';
 
         hideInfoNode.style.display = 'block';
-        hideInfoNode.textContent = `${count} ${sklonenie(count, WORDS)} · ${totalPriceNode.textContent}`;
+        hideInfoNode.textContent = `${count} ${getNoun(count, WORDS)} · ${totalPriceNode.textContent}`;
         productCheckboxNode.style.display = 'none';
         selectAllNode.style.display = 'none';
     } else { 

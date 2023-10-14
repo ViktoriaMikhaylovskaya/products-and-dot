@@ -3,7 +3,7 @@
   font-family: "Segoe UI";
   font-style: normal;
   font-weight: 400;
-  src: url("./fonts/SegoeUI.woff2") format("woff2");
+  src: url("/fonts/SegoeUI.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -11,7 +11,7 @@
   font-family: "Segoe UI";
   font-style: normal;
   font-weight: 700;
-  src: url("./fonts/SegoeUI-Bold.woff2") format("woff2");
+  src: url("/fonts/SegoeUI-Bold.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -108,7 +108,7 @@ input {
 }
 
 [type="checkbox"]:checked + .checkbox__span::after {
-  content: url("../public/images/icons/check-mark.svg");
+  content: url(/images/icons/check-mark.svg);
   border-radius: 5.5px;
   background-color: #cb11ab;
   width: 22px;
@@ -589,6 +589,7 @@ input {
 
 .message__text {
   line-height: 16px;
+  position: relative;
 }
 
 .message__text span {
@@ -894,7 +895,7 @@ footer::before {
 
   .header__menu-button::before {
     position: absolute;
-    content: url(./images/icons/menu-mobile.svg);
+    content: url(images/icons/menu-mobile.svg);
     width: 28px;
     height: 28px;
     left: 0px;
@@ -999,7 +1000,7 @@ footer::before {
   }
 
   .header__menu-button::before {
-    content: url(./images/icons/menu.svg);
+    content: url(images/icons/menu.svg);
     width: 28px;
     height: 24px;
     position: absolute;
@@ -1283,6 +1284,7 @@ footer::before {
   }
 
   .message__extra-text {
+    font-size: 13px;
     position: absolute;
     z-index: 1;
     background-color: white;
@@ -1364,6 +1366,7 @@ footer::before {
     margin-left: 25px;
     padding-top: 11px;
   }
+
   .count__buttons {
     width: 100px;
     height: 44px;
@@ -1371,9 +1374,11 @@ footer::before {
     align-items: center;
     margin-bottom: 4px;
   }
+
   .count__buttons button {
     padding-left: 6px;
   }
+
   .count__buttons span {
     font-size: 16px;
     line-height: 24px;
@@ -1383,10 +1388,12 @@ footer::before {
   .count__remainder {
     margin: 3px 0;
   }
+
   .count__actions {
     gap: 5px;
     margin-right: -3px;
   }
+
   .product__price {
     display: flex;
     flex-direction: column;
@@ -1397,12 +1404,17 @@ footer::before {
   }
 
   .price__total {
-    font-size: 1.3rem;
+    font-size: 20px;
     line-height: 28px;
     letter-spacing: -0.2px;
     font-weight: 700;
     margin: 0;
   }
+
+  .price__total--long {
+    font-size: 16px;
+  }
+
   .price__total-currency {
     font-size: 16px;
     letter-spacing: 0.2px;

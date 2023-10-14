@@ -1,11 +1,11 @@
 import { changeCountInBasketIcon } from './count-product-in-notify';
-import { WORDS, getPrice, sklonenie, numberWithSpaces } from './utils';
+import { WORDS, getNumber, getNoun, getNumberWithSpaces } from './utils';
 
 const productsSectionNode = document.getElementsByClassName('products')[0];
 const productsCollection = productsSectionNode.getElementsByClassName('product');
 const productListNode = productsSectionNode.querySelector('.products__list');
 const selectAllCheckbox = productsSectionNode.querySelector('.checkbox-select-all');
-const stockListNode = document.querySelector('.stock__list'); // Отсутствующие товары
+const stockListNode = document.querySelector('.stock__list');
 const missingProducts = document.getElementsByClassName('stock__item');
 const paymentNode = document.querySelector('.payment-write-off');
 const paymentDescriptionNode = paymentNode.querySelector('.payment-write-off__description');
@@ -36,21 +36,17 @@ const changeTotalPrice = () => {
         const countSum = product.querySelector('.count__sum').textContent;
 
         if (checkbox.checked) {
-            totalPrice += getPrice(price);
-            initTotalPrice += getPrice(initPrice);
-            discountSum += getPrice(initPrice) - getPrice(price);
-            count += getPrice(countSum);
+            totalPrice += getNumber(price);
+            initTotalPrice += getNumber(initPrice);
+            discountSum += getNumber(initPrice) - getNumber(price);
+            count += getNumber(countSum);
         }
     }
 
-    //  разделения цены по трем знакам
-    // totalPriceNode.textContent = `${numberWithSpaces(totalPrice)} сом`;
-    // initTotalPriceNode.textContent = `${numberWithSpaces(initTotalPrice)} сом`;
-    // discountNode.textContent = `- ${numberWithSpaces(discountSum)} сом`;
-    totalPriceNode.textContent = `${totalPrice} сом`;
-    initTotalPriceNode.textContent = `${initTotalPrice} сом`;
-    discountNode.textContent = `- ${discountSum} сом`;
-    countProductsNode.textContent = `${count} ${sklonenie(count, WORDS)}`;
+    totalPriceNode.textContent = `${getNumberWithSpaces(totalPrice)} сом`;
+    initTotalPriceNode.textContent = `${getNumberWithSpaces(initTotalPrice)} сом`;
+    discountNode.textContent = `- ${getNumberWithSpaces(discountSum)} сом`;
+    countProductsNode.textContent = `${count} ${getNoun(count, WORDS)}`;
 }
 
 // Функция для пересчитывания цены при изменении количества продуктов
@@ -64,11 +60,8 @@ const changeProductPrice = (productId) => {
     const discountedPriceNode = product.querySelector('.price__total'); // цена с вычетом скидки
     const unitDiscountedPrice = discountedPriceNode.getAttribute('data-price'); // цена за единицу со скидкой
 
-    // startingPriceNode.textContent = Math.round(Number(productCount) * Number(unitStartingPrice));
-    // discountedPriceNode.textContent = Math.round(Number(productCount) * Number(unitDiscountedPrice));
-
-    startingPriceNode.textContent = numberWithSpaces((Number(productCount) * Number(unitStartingPrice)).toFixed(2));
-    discountedPriceNode.textContent = numberWithSpaces((Number(productCount) * Number(unitDiscountedPrice)).toFixed(2));
+    startingPriceNode.textContent = getNumberWithSpaces((Number(productCount) * Number(unitStartingPrice)).toFixed(2));
+    discountedPriceNode.textContent = getNumberWithSpaces((Number(productCount) * Number(unitDiscountedPrice)).toFixed(2));
 
     changeTotalPrice();
 }
@@ -87,6 +80,7 @@ const onClickSelectAllCheckbox = () => {
 }
 
 const onClickCheckbox = () => {
+    console.log('22222');
     for (let product of productsCollection) { 
         if (!product.checked) {
             selectAllCheckbox.checked = false;
@@ -125,7 +119,7 @@ const incrementCountProducts = (elementNode) => {
 
     if (!!product.querySelector('.count__remainder')) {
         const remainderNode = product.querySelector('.count__remainder');
-        const remainder = getPrice(remainderNode.textContent);
+        const remainder = getNumber(remainderNode.textContent);
 
         if (Number(countNode.textContent) < remainder) {
             countNode.textContent = Number(countNode.textContent) + 1;
@@ -157,7 +151,7 @@ const decrementCountProducts = (elementNode) => {
 
     if (!!productNode.querySelector('.count__remainder')) {
         const remainderNode = productNode.querySelector('.count__remainder');
-        const remainder = getPrice(remainderNode.textContent);
+        const remainder = getNumber(remainderNode.textContent);
         const incrementButtonNode = productNode.querySelector('.count__increment');
 
         incrementButtonNode.disabled = remainder >= Number(countNode.textContent) ? false : true;
@@ -184,7 +178,7 @@ const changeMissingProductsBlock = () => {
     const block = document.querySelector('.out-of-stock');
     const title = document.querySelector('.stock__title');
 
-    title.textContent = `Отсутствуют · ${missingProducts.length} ${sklonenie(missingProducts.length, WORDS)}`;
+    title.textContent = `Отсутствуют · ${missingProducts.length} ${getNoun(missingProducts.length, WORDS)}`;
 
     if (missingProducts.length === 0) { 
         block.style.display = 'none';
