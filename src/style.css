@@ -780,7 +780,7 @@ input {
   padding: 10px 34px;
   border: none;
   color: #fff;
-  margin-top: 24px;
+  margin-top: 25px;
   margin-bottom: 13px;
   width: 100%;
   font-weight: 700;
@@ -956,6 +956,14 @@ footer::before {
     margin-bottom: 18px;
   }
 
+  .delivery {
+    padding-top: 17px;
+  }
+
+  .stock__header {
+    padding: 16px 0;
+  }
+
   .stock__list {
     padding: 0;
   }
@@ -968,6 +976,14 @@ footer::before {
     display: flex;
     flex-direction: column;
     gap: 18px;
+  }
+
+  .total__header {
+    margin-top: 6px;
+  }
+
+  .total__list {
+    margin-bottom: 18px;
   }
 
   .total__delivery-info {
@@ -986,7 +1002,7 @@ footer::before {
 @media (min-width: 1024px) {
   .header {
     padding: 20px 24px;
-    padding-bottom: 42px;
+    padding-bottom: 41px;
     justify-content: flex-start;
     gap: 17px;
   }
@@ -1241,7 +1257,7 @@ footer::before {
 
   .delivery__header {
     padding: 0 7px;
-    margin-bottom: 17px;
+    margin-bottom: 16px;
   }
 
   .delivery__title {
@@ -1683,11 +1699,12 @@ footer::before {
   margin: 0;
   font-size: 20px;
   line-height: 28px;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.5px;
 }
 
 .modal__close-icon {
   cursor: pointer;
+  margin-right: -5px;
 }
 
 .modal__form {
@@ -1698,6 +1715,25 @@ footer::before {
   flex-direction: column;
   gap: 16px;
   height: 100%;
+}
+
+.button-select {
+  width: 100%;
+  background-color: rgba(203, 17, 171, 1);
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(203, 17, 171, 1);
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
+  padding: 9px 48px;
+  margin-top: auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.button-select:hover {
+  border-color: #6725a8;
 }
 
 /* Модальное окно "Способ оплаты" */
@@ -1724,26 +1760,7 @@ footer::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 5px;
-}
-
-.button-select {
-  width: 100%;
-  background-color: rgba(203, 17, 171, 1);
-  color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(203, 17, 171, 1);
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
-  padding: 8px 48px;
-  margin-top: auto;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 700;
-}
-
-.button-select:hover {
-  border-color: #6725a8;
+  margin-right: 4px;
 }
 
 /* Модальное окно "Способ доставки" */
@@ -1754,6 +1771,7 @@ footer::before {
 .method {
   display: flex;
   gap: 8px;
+  margin-bottom: 10px;
 }
 
 .method__item {
@@ -1792,7 +1810,8 @@ footer::before {
 .addresses-block {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 23px;
+  margin-top: -3px;
 }
 
 .addresses-block--hidden {
@@ -1803,6 +1822,10 @@ footer::before {
   display: flex;
   gap: 8px;
   align-items: flex-start;
+}
+
+.address__input {
+  margin: 9px 3px 0 2px;
 }
 
 .address__label {
@@ -1827,6 +1850,11 @@ footer::before {
   margin-left: 8px;
   color: rgba(160, 160, 164, 1);
   font-size: 13px;
+}
+
+.address__delete-icon {
+  margin-top: 3px;
+  margin-right: -1px;
 }
 
 .address__delete-icon svg {
@@ -1860,22 +1888,61 @@ footer::before {
     display: flex;
   }
 
-  .modal-delivery .modal__container {
-    width: 500px;
-  }
-
   .modal__container {
     width: 400px;
     min-height: 408px;
     height: auto;
-    background-color: rgba(246, 246, 250, 1);
     margin: auto;
     border-radius: 16px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
     padding: 24px;
   }
+
+  .modal-delivery .modal__container {
+    width: 500px;
+    padding-top: 15px;
+    gap: 12px;
+  }
+
+  .modal-payment .modal__container {
+    padding-top: 15px;
+    padding-right: 20px;
+    height: 408px;
+    gap: 14px;
+  }
+
+  .modal-delivery .modal__title {
+    letter-spacing: -0.2px;
+  }
+
+  .modal__close-icon {
+    margin-top: 5px;
+    margin-right: 0;
+  }
+
+  .modal-delivery .modal__close-icon {
+    margin-right: -5px;
+  }
+
+  .method__text {
+    height: 36px;
+  }
+
+  .card__radio-btn {
+    margin-left: 3px;
+  }
+
   .button-select {
     width: 164px;
+    padding: 9px 10px;
+  }
+
+  .addresses-block {
+    gap: 20px;
+  }
+
+  .address__input {
+    margin-right: 4px;
   }
 
   .address__delete-icon {
