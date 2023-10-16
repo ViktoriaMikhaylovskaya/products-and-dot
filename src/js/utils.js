@@ -1,6 +1,8 @@
 export const WORDS = ['товар', 'товара', 'товаров'];
 export const regForNumbers = /[0-9]/;
 export const regForEmail = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{0,30}[0-9A-Za-z]?)|([0-9А-Яа-я]{1}[-0-9А-я\.]{0,30}[0-9А-Яа-я]?))@([-A-Za-z]{1,}\.){1,}[-A-Za-z]{2,})$/;
+export const regForInn = /[^\d]/;
+export const regForTel = /(\+7|8)[\s(]?(\d{3})[\s)]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})/g;
 
 export const getNumber = (str) => { 
   return Number(str.replace(/[^\d.]/ig, ''));

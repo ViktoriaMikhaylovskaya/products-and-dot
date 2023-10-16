@@ -1,4 +1,4 @@
-import { regForNumbers, regForEmail } from './utils';
+import { regForNumbers, regForEmail, regForInn, regForTel } from './utils';
 const form = document.querySelector('form');
 const nameLabel = document.querySelector('.form__label--name');
 const nameInput = document.querySelector('.form__label--name > .form__field');
@@ -11,6 +11,9 @@ const emailInput = document.querySelector('.form__label--email > .form__field');
 
 const telLabel = form.querySelector('.form__label--tel');
 const telInput = form.querySelector('.form__label--tel > .form__field');
+
+const innLabel = form.querySelector('.form__label--inn');
+const innInput = form.querySelector('.form__label--inn > .form__field');
 
 const validateSurnameField = (label, input) => { 
     const error = label.querySelector('.form__field-error');
@@ -36,10 +39,7 @@ const validateTelField = (label, input) => {
     const labelField = label.querySelector('.form__field-name');
     let inputValue = input.value.replace(/[a-zA-Z\.&^%$_=?><!@#*]/, '');
 
-    let pattern = /(\+7|8)[\s(]?(\d{3})[\s)]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})/g;    // паттерн с проставленными скобками
-    let correctNumber = inputValue.replace(pattern, '+7 ($2) $3-$4-$5');    //  заменa
-
-    if (!pattern.test(inputValue) && inputValue.length === 0) {
+    if (regForTel.test(inputValue) || inputValue.length === 0) {
         error.style.opacity = 0;
         input.style.borderColor = 'rgba(0, 0, 0, 0.2)';
     } else { 
@@ -52,8 +52,6 @@ const validateTelField = (label, input) => {
     } else { 
         labelField.style.opacity = 0;
     }
-
-    input.value = correctNumber;
 }
 
 const validateNameField = (label, input) => { 
@@ -91,34 +89,53 @@ const validateEmailField = (label, input) => {
     input.value.length === 0 ? labelField.style.opacity = 0 : labelField.style.opacity = 1;
 }
 
-const onSubmitForm = (e) => { 
-    e.preventDefault();
+const validateInnField = (label, input) => { 
+    const error = label.querySelector('.form__field-extra-text');
+    const labelField = label.querySelector('.form__field-name');
+
+    if (regForInn.test(input.value)) {
+        input.style.borderColor = 'rgba(245, 81, 35, 1)';
+        error.style.opacity = 1;
+        error.textContent = 'Проверьте ИНН';
+        error.style.color = 'rgba(245, 81, 35, 1)';
+    } else { 
+        error.style.borderColor = 'rgba(0, 0, 0, 0.2)';
+        error.style.color = 'rgba(0, 0, 0, 1)';
+        error.textContent = 'Для таможенного оформления';
+        input.style.borderColor = 'rgba(0, 0, 0, 0.2)';
+    }
+
+    input.value.length === 0 ? labelField.style.opacity = 0 : labelField.style.opacity = 1;
+}
+
+const onSubmitForm = (e) => {
     const nameInputValue = form.querySelector('.form__label--name > .form__field').value;
     const surnameInputValue = form.querySelector('.form__label--surname > .form__field').value;
     const emailInputValue = form.querySelector('.form__label--email > .form__field').value;
     const telInput = form.querySelector('.form__label--tel > .form__field').value;
-
-    validateEmailField(emailLabel, emailInput)
+    const innInput = form.querySelector('.form__label--inn > .form__field').value;
 
     let isValidName = !regForNumbers.test(nameInputValue);
     let isValidSurame = !regForNumbers.test(surnameInputValue);
     let isValidEmail = regForEmail.test(emailInputValue);
+    let isValidTel = !regForTel.test(telInput);
+    let isValidInn = !regForInn.test(innInput);
 
-    if (isValidName && isValidSurame && isValidEmail) {
+    if (isValidName && isValidSurame && isValidEmail && isValidInn && isValidTel) {
         alert('Заказ успешно создан!');
     } else { 
         alert('Форма заполнена неверно!');
     }
 }
 
-const initValidateForm = () => { 
+const initValidationForm = () => { 
     nameLabel.addEventListener('input', () => validateNameField(nameLabel, nameInput));
     surnameLabel.addEventListener('input', () => validateSurnameField(surnameLabel, surnameInput));
     emailLabel.addEventListener('input', () => validateEmailField(emailLabel, emailInput));
-
     telLabel.addEventListener('input', () => validateTelField(telLabel, telInput));
+    innLabel.addEventListener('input', () => validateInnField(innLabel, innInput));
 
     form.addEventListener('submit', onSubmitForm);
 }
 
-export default initValidateForm;
+export default initValidationForm;
