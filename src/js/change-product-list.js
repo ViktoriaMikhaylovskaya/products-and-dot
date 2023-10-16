@@ -79,11 +79,21 @@ const onClickSelectAllCheckbox = () => {
 }
 
 const onClickCheckbox = () => {
+    let countCheckedProducts = 0;
+    
     for (let product of productsCollection) { 
-        if (!product.checked) {
+        const checkbox = product.querySelector('.checkbox__input');
+
+        if (!checkbox.checked) {
             selectAllCheckbox.checked = false;
+        } else { 
+            countCheckedProducts++;
         }
     };
+
+    if (countCheckedProducts === productsCollection.length) { 
+        selectAllCheckbox.checked = true;
+    } 
 }
 
 const deleteProduct = (elementNode) => { 
@@ -97,6 +107,7 @@ const deleteProduct = (elementNode) => {
             changeCountInBasketIcon();
         }
     }
+    onClickCheckbox();
 
 }
 
@@ -192,7 +203,6 @@ const onChangeOrderButtonText = () => {
 
     }
 }
-
 
 const initChangesProductList = () => {
     changeTotalPrice();
