@@ -1,4 +1,4 @@
-Хостинг, где можно посмотреть готовый результат - products-and-dot.vercel.app
+Посмотреть готовый результат - https://products-and-dot.vercel.app/
 
 Для запуска выполнить следующие команды:
 - npm install
